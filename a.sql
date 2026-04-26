@@ -45,5 +45,12 @@ SELECT * FROM nomnom WHERE NAME LIKE '%Candy%';
 SELECT * FROM nomnom 
 WHERE NEIGHBOURHOOD IN ('Midtown', 'Downtown', 'Chinatown');
 
+-- 9) Health grade pending (empty value)
+SELECT *
+FROM Restaurant
+WHERE health = '' OR health IS NULL;
+
+
 -- Select the top 4 records ordered by review rating in descending order
 SELECT * FROM nomnom ORDER BY REVIEW DESC LIMIT 4;
+
