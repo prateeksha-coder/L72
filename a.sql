@@ -1,5 +1,5 @@
 -- Create the nomnom table if it does not exist
-CREATE TABLE IF NOT EXISTS nomnom (
+CREATE TABLE IF NOT EXISTS Restaurant (
   NAME TEXT,
   NEIGHBOURHOOD TEXT,
   CUISINE TEXT,
@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS nomnom (
 );
 
 -- Insert sample data into the nomnom table
-INSERT INTO nomnom (NAME, NEIGHBOURHOOD, CUISINE, REVIEW, PRICE, HEALTH) VALUES
+INSERT INTO Restaurant  (NAME, NEIGHBOURHOOD, CUISINE, REVIEW, PRICE, HEALTH) VALUES
   ('Peter', 'Brooklyn', 'Steak', 4.4, '$$$$', 'A'),
   ('Jongro', 'Midtown', 'Korean', 3.5, '$$', 'A'),
   ('Pocha', 'Midtown', 'Pizza', 4, '$$$', 'B'),
@@ -21,36 +21,36 @@ INSERT INTO nomnom (NAME, NEIGHBOURHOOD, CUISINE, REVIEW, PRICE, HEALTH) VALUES
   ('Golden Unicorn', 'Uptown', 'Italian', 3.8, '$$', 'A');
 
 -- Select all records from the nomnom table
-SELECT * FROM nomnom;
+SELECT * FROM Restaurant ;
 
 -- Select distinct neighborhoods from the nomnom table
-SELECT DISTINCT NEIGHBOURHOOD FROM nomnom;
+SELECT DISTINCT NEIGHBOURHOOD FROM Restaurant ;
 
 -- Select distinct cuisines from the nomnom table
-SELECT DISTINCT CUISINE FROM nomnom;
+SELECT DISTINCT CUISINE FROM Restaurant ;
 
 -- Select all records with Chinese cuisine
-SELECT * FROM nomnom WHERE CUISINE = 'Chinese';
+SELECT * FROM Restaurant  WHERE CUISINE = 'Chinese';
 
 -- Select all records with a review rating of 4 or higher
-SELECT * FROM nomnom WHERE REVIEW >= 4;
+SELECT * FROM Restaurant  WHERE REVIEW >= 4;
 
 -- Select all records with Italian cuisine and $$$ price
-SELECT * FROM nomnom WHERE CUISINE = 'Italian' AND PRICE = '$$$';
+SELECT * FROM Restaurant  WHERE CUISINE = 'Italian' AND PRICE = '$$$';
 
 -- Select all records where the name contains 'Candy'
-SELECT * FROM nomnom WHERE NAME LIKE '%Candy%';
+SELECT * FROM Restaurant  WHERE NAME LIKE '%Candy%';
 
 -- Select all records where the neighborhood is Midtown, Downtown, or Chinatown
-SELECT * FROM nomnom 
+SELECT * FROM Restaurant  
 WHERE NEIGHBOURHOOD IN ('Midtown', 'Downtown', 'Chinatown');
 
 -- 9) Health grade pending (empty value)
 SELECT *
-FROM Restaurant
+FROM Restaurant 
 WHERE health = '' OR health IS NULL;
 
 
 -- Select the top 4 records ordered by review rating in descending order
-SELECT * FROM nomnom ORDER BY REVIEW DESC LIMIT 4;
+SELECT * FROM Restaurant  ORDER BY REVIEW DESC LIMIT 4;
 
